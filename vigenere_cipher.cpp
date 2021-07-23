@@ -3,6 +3,8 @@
 #include <exception>
 #include <iomanip>
 
+//*vigenere not virgenere :), whatever
+
 class Virgenere
 {
 private:
