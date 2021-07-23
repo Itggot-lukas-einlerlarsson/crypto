@@ -3,9 +3,7 @@
 #include <exception>
 #include <iomanip>
 
-//*vigenere not virgenere :), whatever
-
-class Virgenere
+class Vigenere
 {
 private:
   int alphabetSize;
@@ -18,8 +16,8 @@ private:
 public:
 
   // inits / dels
-  Virgenere ();
-  ~Virgenere ();
+  Vigenere ();
+  ~Vigenere ();
 
   //class functions
   void printTable();
@@ -33,7 +31,7 @@ public:
 
 };
 
-Virgenere::Virgenere ()
+Vigenere::Vigenere ()
 : alphabetSize(26), alphabet(new char[alphabetSize]), table(new char*[alphabetSize])
 {
   char letter = 'A';
@@ -61,7 +59,7 @@ Virgenere::Virgenere ()
   }
 }
 
-Virgenere::~Virgenere ()
+Vigenere::~Vigenere ()
 {
   delete [] alphabet;
   for (size_t i = 0; i < alphabetSize; i++)
@@ -71,7 +69,7 @@ Virgenere::~Virgenere ()
   delete [] table;
 }
 
-void Virgenere::printAlphabet()
+void Vigenere::printAlphabet()
 {
   for (size_t i = 0; i < alphabetSize; i++)
   {
@@ -80,7 +78,7 @@ void Virgenere::printAlphabet()
   std::cout << '\n';
 }
 
-void Virgenere::printTable()
+void Vigenere::printTable()
 {
   std::cout << "Hello and welcome to a beautiful session of cryptography!" << '\n';
   std::cout << "0 | ";
@@ -97,7 +95,7 @@ void Virgenere::printTable()
   }
 }
 
-void Virgenere::capitalize(std::string& string)
+void Vigenere::capitalize(std::string& string)
 {
   char temp;
   for (size_t i = 0; i < string.length(); i++)
@@ -121,7 +119,7 @@ void Virgenere::capitalize(std::string& string)
   }
 }
 
-void Virgenere::userHandler()
+void Vigenere::userHandler()
 {
   printTable();
   std::cout << "What text do ya want to encrypt?" << ' ';
@@ -140,13 +138,13 @@ void Virgenere::userHandler()
   std::cout << "Deciphertext: " << text <<'\n';
 }
 
-int Virgenere::letterVal(const char& letter)
+int Vigenere::letterVal(const char& letter)
 {
   int value = letter - 65;
   return value;
 }
 
-void Virgenere::createKeystream()
+void Vigenere::createKeystream()
 {
   for (size_t i = 0, j = 0; i < text.length(); i++, ++j)
   {
@@ -154,11 +152,11 @@ void Virgenere::createKeystream()
     {
       j = 0;
     }
-    keystream += key[j]; // ev
+    keystream += key[j];
   }
 }
 
-void Virgenere::encipher()
+void Vigenere::encipher()
 {
   for (size_t i = 0; i < text.length(); i++)
   {
@@ -170,7 +168,7 @@ void Virgenere::encipher()
   }
 }
 
-void Virgenere::decipher()
+void Vigenere::decipher()
 { //reverse
   int index;
   for (size_t i = 0; i < text.length(); i++)
@@ -195,7 +193,7 @@ void Virgenere::decipher()
 
 int main(int argc, char const *argv[])
 {
-  Virgenere crypt;
+  Vigenere crypt;
   crypt.userHandler();
   return 0;
 }
