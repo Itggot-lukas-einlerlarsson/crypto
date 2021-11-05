@@ -1,4 +1,5 @@
 /*
+  FIRST DRAFT, will maybe come back and try to finish
   this program tries to predict primes via patterns of previous primes.
 index has a relation to the prime? previous primes has relation to future prime ?
 some previous primes can be multiplied by two and then futher previous primes can be added/subtracted to find future primes futher down the line?
