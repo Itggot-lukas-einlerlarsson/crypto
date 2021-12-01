@@ -11,13 +11,13 @@ import math
 from random import randint
 
 def main():
-    blocksize = 1 #only blocksize 1 work atm, first draft
+    blocksize = 3 # the larger the primes -> the larger the blocksize can be.
     indata = "hallåellerärduheltgoknödig"
     text = check_input_length(indata, blocksize)
     print("indata, plaintext:", text)
     text_in_ints = text_convert(text, blocksize)
     print(text_in_ints)
-    public_key, private_key = RSA(19,23)
+    public_key, private_key = RSA(1021,1087) #ex
     cipher = encrypt(text_in_ints, public_key[0], public_key[1]) #ciphers are integers -> cannot control conversion to be z_28
     print("cipher:", cipher)
     plaintext_in_ints = decrypt(cipher, private_key[0], private_key[1]) # doesnt work with blocksize larger than 1, text_in_ints =/= plaintext_in_ints
@@ -37,7 +37,7 @@ def text_convert(text, blocksize, type = "int"):
                 count = 0
                 blockstring = ""
                 while count < blocksize:
-                    blockstring += str(text[i])
+                    blockstring += str(text[i]).zfill(blocksize*2)
                     count += 1
                 count = 0
                 # print(blockstring)
@@ -74,7 +74,7 @@ def number_in_S_A(letter_in):
 def S_A():
     return "abcdefghijklmnopqrstuvxyzåäö"
 
-def RSA(p, q): #pls input primenumbers
+def RSA(p, q): #only primes
     n = p*q
     phi = (p-1)*(q-1) #phi of n -> p and q are primes -> phi(n)=phi(p*q)=phi(p)*phi(q) = (p-1)*(q-1)
     e = 0
@@ -89,14 +89,13 @@ def RSA(p, q): #pls input primenumbers
 def encrypt(text_in_ints, n, e):
     cipher = []
     for value in text_in_ints:
-        cipher.append(pow(value, e)%n)
+        cipher.append(pow(value, e)%n) #calculating...
     return cipher
-
 
 def decrypt(cipher_in_ints, n, d):
     plaintext= []
     for value in cipher_in_ints:
-        plaintext.append(pow(value, d)%n)
+        plaintext.append(pow(value, d)%n) #calculating...
     return plaintext
 
 
