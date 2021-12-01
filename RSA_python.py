@@ -11,13 +11,13 @@ import math
 from random import randint
 
 def main():
-    blocksize = 3 # the larger the primes -> the larger the blocksize can be.
-    indata = "hallåellerärduheltgoknödig"
+    blocksize = 2 # the larger the primes -> the larger the blocksize can be --> also the longer the calculations take.
+    indata = "hallåellerärduheltgoknödighej"
     text = check_input_length(indata, blocksize)
     print("indata, plaintext:", text)
     text_in_ints = text_convert(text, blocksize)
     print(text_in_ints)
-    public_key, private_key = RSA(1021,1087) #ex
+    public_key, private_key = RSA(1021,1087)#ex
     cipher = encrypt(text_in_ints, public_key[0], public_key[1]) #ciphers are integers -> cannot control conversion to be z_28
     print("cipher:", cipher)
     plaintext_in_ints = decrypt(cipher, private_key[0], private_key[1]) # doesnt work with blocksize larger than 1, text_in_ints =/= plaintext_in_ints
@@ -89,15 +89,15 @@ def RSA(p, q): #only primes
 def encrypt(text_in_ints, n, e):
     cipher = []
     for value in text_in_ints:
-        cipher.append(pow(value, e)%n) #calculating...
+        cipher.append(pow(value, e, n)) #calculating...
     return cipher
 
 def decrypt(cipher_in_ints, n, d):
     plaintext= []
     for value in cipher_in_ints:
-        plaintext.append(pow(value, d)%n) #calculating...
+        plaintext.append(pow(value, d, n)) #calculating...
     return plaintext
 
 
 if __name__ == '__main__':
-    main() #
+    main()
