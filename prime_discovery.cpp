@@ -88,3 +88,5 @@ void getPrimeVector(std::vector<int> &primeVector, const int& max){
     }
   }
 }
+
+//a^2 = (a-1)(a+1)+1
