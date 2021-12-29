@@ -89,7 +89,7 @@ void getPrimeVector(std::vector<int> &primeVector, const int& max){
   }
 }
 
-//futher ideas
+//futher ideas - probably nonsense
 //a^2 = (a-1)(a+1)+1
 //we have formulas, ex https://en.wikipedia.org/wiki/Formula_for_primes
   // Dynamic, moving formulas? parallell formulas, a table of formulas depending on indices(nth_prime)
