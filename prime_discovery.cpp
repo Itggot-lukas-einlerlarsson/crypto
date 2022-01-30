@@ -1,10 +1,10 @@
 /*
   Just an idea, will maybe come back and try to finish.
   this program tries to predict primes via patterns of previous primes.
-index has a relation to the prime? previous primes has relation to future prime ?
-some previous primes can be multiplied by two and then futher previous primes can be added/subtracted to find future primes futher down the line?
-ex maybe there is a pattern here:
-patterns based on primeintervals who's numbers gets multiplied by 2 or +/- to get a prime futher down the line?
+index has a relation to the prime, previous primes has relation to future prime 
+some previous primes can be multiplied by two and then futher previous primes can be added/subtracted to predict(find) future primes futher down the line
+ex:
+patterns based on primeintervals who's numbers gets multiplied by 2 and +/- prime to try to get a prime futher down the line
 1             1 = 1
 2             2 = 2 * 1
 3             3 = 2 * 1 + 1, 2 * 2 -1
