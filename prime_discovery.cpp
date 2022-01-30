@@ -43,11 +43,10 @@ void printPrimeVector(const std::vector<int> &primeVector);
 void getPrimeVector(std::vector<int> &primeVector, const int& max);
 std::string getVectorPatterns(const std::vector<int> &primeVector, int max); //check to see if primes before *2 +- other primes before get present prime
 void predictPrime(const std::vector<int> &primeVector);
-// ev: bool isPrime(const std::vector<int> &primeVector)
 
 int main(int argc, char const *argv[]) {
   std::vector<int> primeVector = {1, 2, 3, 5}; //vector used to check primes
-  const int MAX_PRIME = 5000; //all primes less than 5000 is being checked.
+  const int MAX_PRIME = 5000; //all primes less than 5000 are being checked.
   getPrimeVector(primeVector, MAX_PRIME);
   printPrimeVector(primeVector);
   //std::vector<int> primePredictVector = {1, 2, 3, 5}; //vector used to predict primes
@@ -55,14 +54,14 @@ int main(int argc, char const *argv[]) {
 }
 
 std::string getVectorPatterns(const std::vector<int> &primeVector){
-  //trying to find intervals appropriate to multiply and add/subtract to predict prime
-  int middleBoundPrime = primeVector.size()/2+1;
-  if (primeVector[primeVector.size()/2]+1 > primeVector[primeVector.size()-1]) {
-    int middleBoundPrime = primeVector.size()/2;
-  } else {
-    int middleBoundPrime = primeVector.size()/2;
-  }
-  int lowerBoundPrime = primeVector.size()/4;
+  //check to see if primes before *2 +- other primes before get present prime
+  //int middleBoundPrime = primeVector.size()/2; 
+  //if (primeVector[primeVector.size()/2]+1 > primeVector[primeVector.size()-1]) {
+  //  int middleBoundPrime = primeVector.size()/2;
+  //} else {
+  //  int middleBoundPrime = primeVector.size()/2;
+  //}
+  //int lowerBoundPrime = primeVector.size()/4;
   std::string primePattern;
   return primePattern;
 }
@@ -92,5 +91,4 @@ void getPrimeVector(std::vector<int> &primeVector, const int& max){
 //futher ideas - probably nonsense
 //a^2 = (a-1)(a+1)+1
 //https://en.wikipedia.org/wiki/Formula_for_primes
-  // Dynamic, moving formulas? parallell formulas, a table of formulas depending on indices(nth_prime)
-  // moving modulus-formula, interplay
+//moving modulus-formula, interplay 2 formulas
