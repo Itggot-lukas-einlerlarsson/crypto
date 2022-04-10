@@ -92,3 +92,4 @@ void getPrimeVector(std::vector<int> &primeVector, const int& max){
 //a^2 = (a-1)(a+1)+1
 //https://en.wikipedia.org/wiki/Formula_for_primes
 //moving modulus-formula, interplay 2 formulas
+// interplay idea: f(x) = x, g(x) = x^2 -> (f : 1; g : 3), x = 1..3 -> (1 ; 1, 4, 9) <- do something with
