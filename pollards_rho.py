@@ -3,7 +3,7 @@ import math
 def f(x,n):
     return (x**2 + 1)%n
 
-def pollards_rho(n, x_0):
+def pollards_rho(n, x_0): #returns a divisor and iteration amount
     x_i = x_0 #turtle
     y_i = x_0 #hare
     i = 0
