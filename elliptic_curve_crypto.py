@@ -17,7 +17,7 @@
 # -> speglingen av P blir då P' = -P = (x, - y) ≡ (x, p-y) (mod p), ex: P + Q' = P - Q
 # associativitet, kommutativ, identitet och invers: addition
 
-import random
+import random #
 import math
 from sympy import legendre_symbol
 
