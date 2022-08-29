@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # our teacher came up with this cryptosystem when working with visual crypto and showed it to us during class
-# course MA1493 - HT 22
+# course MA1493 - VT 22
 from PIL import Image
 import numpy as np
 import random
