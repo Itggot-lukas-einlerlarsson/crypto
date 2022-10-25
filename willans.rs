@@ -1,6 +1,6 @@
 use std::f64::consts::PI;
 
-// inspiration https://www.youtube.com/watch?v=j5s0h42GfvM
+// inspiration: https://www.youtube.com/watch?v=j5s0h42GfvM
 
 /// willans nth prime formulae -- absurd time complexity but still interesting
 pub fn nth_prime(nth_prime : i64) -> f64 {
